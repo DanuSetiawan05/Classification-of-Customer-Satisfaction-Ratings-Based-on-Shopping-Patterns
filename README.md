@@ -2,7 +2,7 @@
 
 Mengklasifikasikan tingkat kepuasan pelanggan (Buruk/Netral/Baik) berdasarkan pola belanja (kategori barang, jumlah pembelian, lokasi, metode pembayaran, dan atribut lainnya), menggunakan model Random Forest.
 
-> Project ini dikerjakan sebagai tugas mata kuliah, dikerjakan secara individu.
+> *Project ini dikerjakan sebagai tugas mata kuliah, dikerjakan secara individu.*
 
 ## Latar Belakang
 
@@ -17,13 +17,13 @@ Perusahaan ritel sering ingin memahami pola belanja seperti apa yang berkaitan d
 
 1. Membangun label tingkat kepuasan (Buruk/Netral/Baik) berdasarkan distribusi nilai Review Rating yang sebenarnya.
 2. Membangun model klasifikasi Random Forest untuk memprediksi tingkat kepuasan pelanggan.
-3. Mengevaluasi performa model secara jujur menggunakan baseline dan cross-validation.
+3. Mengevaluasi performa model menggunakan baseline dan cross-validation.
 
 ## Keterbatasan dan Temuan Penting
 
-Setelah label diperbaiki agar sesuai dengan rentang data asli dan dievaluasi secara robust (baseline + cross-validation, serta dibandingkan dengan 5 algoritma lain di luar Random Forest), performa seluruh model berada **di sekitar atau bahkan sedikit di bawah baseline tebak kelas mayoritas (36.6%)**. Ini bukan indikasi kesalahan kode atau metodologi — pengecekan korelasi menunjukkan fitur numerik seperti usia, jumlah pembelian, dan riwayat pembelian sebelumnya memiliki korelasi yang nyaris nol terhadap Review Rating.
+Setelah label diperbaiki agar sesuai dengan rentang data asli dan dievaluasi secara robust (baseline & cross-validation), performa model berada di sekitar atau bahkan sedikit di bawah baseline tebak kelas mayoritas (36.6%). Pengecekan korelasi menunjukkan fitur numerik seperti usia, jumlah pembelian, dan riwayat pembelian sebelumnya memiliki korelasi yang nyaris nol terhadap Review Rating.
 
-Temuan ini mengindikasikan bahwa pada dataset ini, kolom `Review Rating` kemungkinan besar tidak memiliki hubungan yang benar-benar bisa dipelajari dengan pola belanja lainnya (umum terjadi pada dataset sintetis yang dibuat untuk latihan). Notebook ini karena itu lebih tepat dipahami sebagai **demonstrasi metodologi klasifikasi yang lengkap dan benar** (pembersihan data, encoding, labeling berbasis data, modeling, dan evaluasi yang jujur), bukan sebagai model prediksi kepuasan pelanggan yang siap dipakai.
+Temuan ini mengindikasikan bahwa pada dataset ini, kolom `Review Rating` kemungkinan besar tidak memiliki hubungan yang benar-benar bisa dipelajari dengan pola belanja lainnya (umum terjadi pada dataset sintetis yang dibuat untuk latihan). Notebook ini karena itu lebih tepat dipahami sebagai demonstrasi metodologi klasifikasi yang lengkap dan benar (pembersihan data, encoding, labeling berbasis data, modeling, dan evaluasi), bukan sebagai model prediksi kepuasan pelanggan yang siap dipakai.
 
 ## Metodologi
 
@@ -80,7 +80,7 @@ jupyter notebook Customer_Satisfaction_Classification.ipynb
 
 - Menggunakan dataset lain yang memiliki hubungan lebih jelas antara pola belanja dan kepuasan pelanggan untuk membangun model prediksi yang benar-benar dapat diandalkan.
 - Menambahkan fitur tambahan (misalnya waktu respons layanan pelanggan atau riwayat komplain) yang berpotensi memiliki sinyal prediktif lebih kuat terhadap kepuasan pelanggan.
-- Membandingkan hasil dengan algoritma lain (Logistic Regression, Gradient Boosting, SVM, KNN) sebagai bagian dari proses eksplorasi model, seperti yang telah dilakukan dalam analisis pendukung project ini.
+- Membandingkan hasil dengan algoritma lain (Logistic Regression, Gradient Boosting, SVM, KNN) sebagai bagian dari proses eksplorasi model.
 
 ## Author
 
